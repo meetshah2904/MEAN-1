@@ -1,0 +1,11 @@
+const express = require("express")
+const royalcalc = require("./royalcalc")
+const app = express()
+// Middleware
+app.use(express.urlencoded({extended:true}))
+app.use(express.json())
+app.post("/add",royalcalc.add)
+app.post("/sub",royalcalc.sub)
+app.post("/mul",royalcalc.mul)
+app.post("/div",royalcalc.div)
+app.listen(9999)
